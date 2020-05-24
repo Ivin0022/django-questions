@@ -80,8 +80,8 @@ INSTALLED_APPS = [
 
     # local
     'users.apps.UsersConfig',
+    'questions.apps.QuestionsConfig',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
