@@ -25,11 +25,19 @@ from rest_framework.routers import DefaultRouter
 from djoser.views import UserViewSet
 
 # local
-from questions.views import SectionViewset
+from questions.views import (
+    SectionViewset,
+    TextAnswerViewset,
+    ChoiceAnswerViewset,
+    MultipleChoiceAnswerViewset,
+)
 
 router = DefaultRouter()
 router.register('users', UserViewSet)
 router.register('questions', SectionViewset)
+router.register('answer/text', TextAnswerViewset)
+router.register('answer/choice', ChoiceAnswerViewset)
+router.register('answer/multiplechoice', MultipleChoiceAnswerViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
