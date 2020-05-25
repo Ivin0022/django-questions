@@ -5,6 +5,6 @@ from .serializers import SectionSerializer
 from .models import Section
 
 
-class SectionViewset(viewsets.ModelViewSet):
-    queryset = Section.objects.all()
+class SectionViewset(viewsets.ReadOnlyModelViewSet):
+    queryset = Section.objects.filter(level=0)
     serializer_class = SectionSerializer
