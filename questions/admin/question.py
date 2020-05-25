@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
+# third party
+from adminsortable2.admin import SortableAdminMixin
+
+# local
 from ..models import Question, Choice
 
 
@@ -14,7 +18,7 @@ class ChoiceInline(admin.TabularInline):
 
 
 @admin.register(Question)
-class QuestionAdmin(admin.ModelAdmin):
+class QuestionAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ('id', 'title_text')
     list_display_links = ('title_text',)
     inlines = [ChoiceInline]

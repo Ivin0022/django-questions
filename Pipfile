@@ -18,6 +18,7 @@ django-heroku = "*"
 gunicorn = "*"
 django-extensions = "*"
 ipython = "*"
+django-admin-sortable2 = "*"
 
 [requires]
 python_version = "3.7"

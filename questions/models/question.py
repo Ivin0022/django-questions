@@ -17,6 +17,7 @@ class Question(models.Model):
     )
 
     title_text = models.CharField('Question Title', max_length=100)
+    position = models.PositiveIntegerField(default=0)
     type = models.CharField(
         'question type',
         max_length=1,
@@ -31,6 +32,7 @@ class Question(models.Model):
 
         verbose_name = 'Question'
         verbose_name_plural = 'Questions'
+        ordering = ('position',)
 
     def __str__(self):
         """Unicode representation of Question."""
