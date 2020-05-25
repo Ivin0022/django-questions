@@ -19,6 +19,7 @@ class QuestionInline(SortableInlineAdminMixin, admin.TabularInline):
     min_num = 0
     max_num = 10
     extra = 1
+    show_change_link = True
 
 
 @admin.register(Section)
