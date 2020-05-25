@@ -19,6 +19,8 @@ gunicorn = "*"
 django-extensions = "*"
 ipython = "*"
 django-admin-sortable2 = "*"
+django-mptt = "*"
+feincms = "*"
 
 [requires]
 python_version = "3.7"

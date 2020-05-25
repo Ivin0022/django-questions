@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'adminsortable2',
     'corsheaders',
+    'feincms',
     'djoser',
 
     # local
