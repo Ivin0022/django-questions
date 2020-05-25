@@ -7,6 +7,7 @@ from .choice import ChoiceSerializer
 
 class QuestionSerializer(serializers.ModelSerializer):
     choice_set = ChoiceSerializer(many=True)
+    text_answer = serializers.SerializerMethodField()
 
     class Meta:
         model = Question
@@ -14,5 +15,18 @@ class QuestionSerializer(serializers.ModelSerializer):
             'id',
             'title_text',
             'type',
+            'text_answer',
             'choice_set',
         )
+
+    def get_text_answer(self, instance):
+        user = self.context.get('request').user
+
+        if instance.type != instance.TEXT:
+            return ''
+
+        text_answer = instance.textanswer_set.filter(user=user).first()
+        if not text_answer:
+            return ''
+
+        return text_answer.answer
