@@ -18,6 +18,7 @@ class Question(models.Model):
 
     title_text = models.CharField('Question Title', max_length=100)
     position = models.PositiveIntegerField(default=0)
+    section = models.ForeignKey('Section', on_delete=models.CASCADE)
     type = models.CharField(
         'question type',
         max_length=1,
