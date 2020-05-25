@@ -14,3 +14,11 @@ class TextAnswerSerializer(serializers.ModelSerializer):
             'question',
             'answer',
         )
+
+    def create(self, validated_data):
+        answer, created = TextAnswer.objects.update_or_create(
+            question=validated_data.get('question'),
+            user=validated_data.get('user'),
+            defaults={'answer': validated_data.get('answer')}
+        )
+        return answer
