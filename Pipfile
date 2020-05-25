@@ -18,6 +18,10 @@ django-heroku = "*"
 gunicorn = "*"
 django-extensions = "*"
 ipython = "*"
+django-admin-sortable2 = "*"
+django-mptt = "*"
+feincms = "*"
+djangorestframework-recursive = "*"
 
 [requires]
 python_version = "3.7"

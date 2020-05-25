@@ -75,13 +75,15 @@ INSTALLED_APPS = [
     # 3rd party
     'django_extensions',
     'rest_framework',
+    'adminsortable2',
     'corsheaders',
+    'feincms',
     'djoser',
 
     # local
     'users.apps.UsersConfig',
+    'questions.apps.QuestionsConfig',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
