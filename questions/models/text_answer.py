@@ -6,7 +6,7 @@ class TextAnswer(models.Model):
     """Model definition for TextAnswer."""
 
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    question = models.ForeignKey('TextQuestion', on_delete=models.CASCADE)
+    question = models.ForeignKey('Question', on_delete=models.CASCADE)
     answer = models.CharField('Answer', max_length=100)
 
     class Meta:

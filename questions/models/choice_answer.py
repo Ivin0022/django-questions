@@ -6,7 +6,7 @@ class ChoiceAnswer(models.Model):
     """Model definition for ChoiceAnswer."""
 
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    question = models.ForeignKey('ChoiceQuestion', on_delete=models.CASCADE)
+    question = models.ForeignKey('Question', on_delete=models.CASCADE)
     answer = models.ForeignKey('Choice', on_delete=models.CASCADE)
 
     class Meta:
