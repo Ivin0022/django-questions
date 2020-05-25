@@ -4,7 +4,7 @@ from django.db import models
 class Choice(models.Model):
     """Model definition for Choice."""
 
-    question = models.ForeignKey('ChoiceQuestion', on_delete=models.CASCADE)
+    question = models.ForeignKey('Question', on_delete=models.CASCADE)
     choice_text = models.CharField('choice text', max_length=100)
 
     class Meta:
